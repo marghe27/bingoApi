@@ -10,19 +10,14 @@ app.use(bodyparser.urlencoded({
 
 
 
-function numExtract(){
+
+// API che estrae un numero 
+
+app.get('/extract', function (req, res) {
 	'use strict';
 	
-	return bingo.getBag();
-}
-console.log('prova funzione estract', numExtract());
-// 
-
-app.get('/numbers', function (req, res) {
-	'use strict';
-	console.log(req.query, "Questa è req.query");
-	res.json();
-	console.log(res.json(), "Questa è res.json");
+	res.json(bingo.extract());
+	
 });
 // 
 //app.get('/numbers:id', function(req, res){
